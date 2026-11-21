@@ -1,5 +1,7 @@
 # Deploy and Host Cal.com with Railway
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/calcom-62-scheduling-platform-postgres-s?referralCode=20H68q)
+
 Cal.com is open-source scheduling software: share booking links, connect calendars and video apps, and let people pick a time that works. This template runs Cal.com 6.2 with PostgreSQL 18 and a small scheduler service for reminders and background tasks, and creates your admin account before the site goes online.
 
 ## About Hosting Cal.com
