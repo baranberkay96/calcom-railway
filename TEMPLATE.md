@@ -45,7 +45,7 @@ Market (2026-11): leader "Cal.com" 224 active on `calcom/cal.com:latest`, Postgr
 
 ## Resources
 
-Not measured yet (the deploy test was blocked, see Open questions). Estimates: Calcom 0.6-1.0 GB idle (Next.js 16; migration + ts-node seed + temporary setup server on the first start may peak higher), Postgres 0.1 GB, Scheduler < 0.02 GB. ≈ $8-12/month. Minimum plan: Hobby (Trial's 1 GB cap is at risk; measure before promising Trial).
+Measured on Railway on 2026-11-21: Calcom 1.17 GB during onboarding and guest booking, Postgres 0.09 GB, Scheduler 0.0007 GB. RAM alone is about $12.60/month; budget $13-18/month with light CPU use and the database volume. Minimum plan: Hobby; allocate at least 2 GB RAM to Calcom. The measured app exceeds Trial 1 GB and Free 0.5 GB limits. CPU depends on booking traffic; the scheduler is idle between HTTPS calls.
 
 ## Verification checklist
 
@@ -59,4 +59,4 @@ Not measured yet (the deploy test was blocked, see Open questions). Estimates: C
 ## Open questions
 
 - When Cal.diy publishes images, move to them (MIT, no EE code).
-- **Not deploy-tested yet**: the Railway workspace's billing state (`customer.state=UNPAID`, "Your trial has expired") blocked all new deploys on 2026-11-20 before this package could run. Untested: the Docker build, `yarn next start` for the temporary setup server, `/api/auth/setup` via JSON, RAM, NEXT_PUBLIC_DISABLE_SIGNUP at runtime, Scheduler endpoint codes.
+- Calendar OAuth, paid integrations, outbound e-mail delivery and enterprise features require external credentials and were not tested. Core admin onboarding, event creation, guest booking, duplicate rejection and every Scheduler endpoint were tested on Railway on 2026-11-21; anonymous signup redirects to the disabled-signup error.

@@ -51,7 +51,7 @@ This template adds a Scheduler service that calls those endpoints over Railway's
 
 **Versions.** The image is pinned in `services/calcom/Dockerfile` (`CALCOM_IMAGE`, tag and digest). Upstream has not published a newer image since v6.2.0; when a new release appears, update the tag and digest, back up Postgres and redeploy.
 
-**Resources.** Estimated (not yet measured on Railway): Cal.com 0.6-1 GB RAM (Next.js; the first start also runs migrations and the app-store seed), Postgres about 0.1 GB, Scheduler under 0.02 GB; roughly $8-12 per month. Cal.com may not fit the Trial plan's 1 GB limit during the first start; Hobby is recommended.
+**Resources.** Measured on Railway on 2026-11-21: Cal.com used about 1.17 GB RAM during onboarding and booking, Postgres 0.09 GB and Scheduler under 0.001 GB. Budget roughly $13-18 per month for a lightly used project, including some CPU and database storage. **Hobby or higher is required; give Calcom at least 2 GB RAM.** The measured app exceeds the Trial 1 GB and Free 0.5 GB limits.
 
 **License.** The v6.2.0 image is AGPL-3.0 with enterprise code that stays locked without a Cal.com license key; see NOTICE.md. This is a community template; it is not affiliated with Cal.com, Inc.
 
